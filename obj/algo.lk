@@ -3,10 +3,11 @@
 -b _CODE = 0x4000
 -b _DATA = 0x0000
 -u
--k /cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/tools/sdcc-3.6.8-r9946/bin/../share/sdcc/lib/z80
--k /cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/tools/sdcc-3.6.8-r9946/share/sdcc/lib/z80
--l /cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+-k /home/Yo/cpctelera-1.4.2/cpctelera/tools/sdcc-3.6.8-r9946/bin/../share/sdcc/lib/z80
+-k /home/Yo/cpctelera-1.4.2/cpctelera/tools/sdcc-3.6.8-r9946/share/sdcc/lib/z80
+-l /home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
 -l z80
+obj/credits.rel
 obj/main.rel
 
 -e

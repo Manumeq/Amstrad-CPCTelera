@@ -18,53 +18,69 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  l__INITIALIZER                  
      00000000  s__CABS                         
      00000000  s__DABS                         
-     0000011D  l__CODE                         
+     00000451  l__CODE                         
      00004000  s__CODE                         
-     0000411D  s__DATA                         
-     0000411D  s__GSFINAL                      
-     0000411D  s__GSINIT                       
-     0000411D  s__HOME                         
-     0000411D  s__INITIALIZED                  
-     0000411D  s__INITIALIZER                  
+     00004451  s__DATA                         
+     00004451  s__GSFINAL                      
+     00004451  s__GSINIT                       
+     00004451  s__HOME                         
+     00004451  s__INITIALIZED                  
+     00004451  s__INITIALIZER                  
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00004000    0000011D =         285. bytes (REL,CON)
+_CODE                               00004000    00000451 =        1105. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00004000  _main                              main
-     00004041  _cpct_drawStringM1                 cpct_strings
-     00004049  cpct_drawStringM1_asm              cpct_strings
-     00004063  _cpct_drawCharM1                   cpct_strings
-     00004070  cpct_drawCharM1_asm                cpct_strings
-     000040EA  dc_mode1_ct                        
-     000040EE  _cpct_memset                       cpct_memutils
-     000040FC  _cpct_mode_rom_status              cpct_firmware
-     000040FD  _cpct_getScreenPtr                 cpct_video
+     00004000  _g_palette                         credits
+     00004010  _g_credits_0                       credits
+     000040E8  _g_credits_1                       credits
+     000041C0  _g_credits_2                       credits
+     0000422C  _init                              main
+     0000427F  _main                              main
+     00004284  _cpct_setPalette                   cpct_video
+     0000429B  _cpct_setPALColour                 cpct_video
+     000042A7  _cpct_drawSprite                   cpct_sprites
+     0000434C  _cpct_setVideoMode                 cpct_video
+     0000435A  _cpct_memset                       cpct_memutils
+     00004368  _cpct_disableFirmware              cpct_firmware
+     00004368  _cpct_removeInterruptHandler       cpct_firmware
+     00004368  cpct_disableFirmware_asm           cpct_firmware
+     00004368  cpct_removeInterruptHandler_asm    cpct_firmware
+     00004378  _cpct_drawSolidBox                 cpct_sprites
+     00004430  _cpct_mode_rom_status              cpct_firmware
+     00004431  _cpct_getScreenPtr                 cpct_video
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 
 Files Linked                              [ module(s) ]
 
+obj/credits.rel                           [ credits ]
 obj/main.rel                              [ main ]
 
 
 Libraries Linked                          [ object file ]
 
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
-                                          [ cpct_drawStringM1.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
-                                          [ cpct_drawCharM1.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
-                                          [ cpct_dc_mode1_ct.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_setPalette_cbindings.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_setPALColour_cbindings.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_drawSprite_cbindings.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_setVideoMode_cbindings.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_memset_cbinding.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_removeInterruptHandler.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_drawSolidBox_cbindings.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpc_mode_rom_status.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_getScreenPtr_cbindings.rel ]
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.

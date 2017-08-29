@@ -17,17 +17,29 @@
 //------------------------------------------------------------------------------
 
 #include <cpctelera.h>
+#include "credits.h"
+void init(){
+    u8* pvmem;  // Pointer to video memory
+    u8* sprite;
+    cpct_disableFirmware();
+    // Clear Screen
+    cpct_memset(CPCT_VMEM_START, 0, 0x4000);
+    cpct_setVideoMode(0);
+    cpct_setBorder(HW_BLACK);
+    //cpct_fw2hw(g_palette, 16);
+    cpct_setPalette(g_palette, 16);
+
+    // Draw String on the middle of the screen
+    pvmem = cpct_getScreenPtr(CPCT_VMEM_START, 20, 96);
+    //cpct_drawStringM0("Welcome to CPCtelera!", pvmem, 1, 0);
+    cpct_drawSolidBox(CPCT_VMEM_START, 0, 10, 10);
+    cpct_drawSprite(sprite,pvmem,16,16);
+
+}
 
 void main(void) {
-   u8* pvmem;  // Pointer to video memory
+    init();
 
-   // Clear Screen
-   cpct_memset(CPCT_VMEM_START, 0, 0x4000);
-
-   // Draw String on the middle of the screen
-   pvmem = cpct_getScreenPtr(CPCT_VMEM_START, 20, 96);
-   cpct_drawStringM1("Welcome to CPCtelera!", pvmem, 1, 0);
-
-   // Loop forever
-   while (1);
+    // Loop forever
+    while (1);
 }
