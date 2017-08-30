@@ -18,57 +18,57 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__CABS                         
      00000000  s__DABS                         
      00000005  l__DATA                         
-     000003F2  l__CODE                         
+     000003E9  l__CODE                         
      00004000  s__CODE                         
-     000043F2  s__DATA                         
-     000043F7  s__GSFINAL                      
-     000043F7  s__GSINIT                       
-     000043F7  s__HOME                         
-     000043F7  s__INITIALIZED                  
-     000043F7  s__INITIALIZER                  
+     000043E9  s__DATA                         
+     000043EE  s__GSFINAL                      
+     000043EE  s__GSINIT                       
+     000043EE  s__HOME                         
+     000043EE  s__INITIALIZED                  
+     000043EE  s__INITIALIZER                  
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00004000    000003F2 =        1010. bytes (REL,CON)
+_CODE                               00004000    000003E9 =        1001. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00004000  _g_palette                         PJ_0
      00004010  _g_PJ_0                            PJ_0
      00004210  _dibujarProta                      main
-     00004238  _mover_personaje                   main
-     00004250  _init                              main
-     0000429E  _main                              main
-     000042AC  _cpct_setPalette                   cpct_video
-     000042C3  _cpct_isKeyPressed                 cpct_keyboard
-     000042C3  cpct_isKeyPressed_asm              cpct_keyboard
-     000042CF  _cpct_setPALColour                 cpct_video
-     000042DB  _cpct_drawSprite                   cpct_sprites
-     00004380  _cpct_keyboardStatusBuffer         cpct_keyboard
-     0000438A  _cpct_setVideoMode                 cpct_video
-     00004398  _cpct_isAnyKeyPressed_f            cpct_keyboard
-     00004398  cpct_isAnyKeyPressed_f_asm         cpct_keyboard
-     000043B3  _cpct_memset                       cpct_memutils
-     000043C1  _cpct_disableFirmware              cpct_firmware
-     000043C1  _cpct_removeInterruptHandler       cpct_firmware
-     000043C1  cpct_disableFirmware_asm           cpct_firmware
-     000043C1  cpct_removeInterruptHandler_asm    cpct_firmware
-     000043D1  _cpct_mode_rom_status              cpct_firmware
-     000043D2  _cpct_getScreenPtr                 cpct_video
+     0000422F  _mover_personaje                   main
+     00004247  _init                              main
+     00004295  _main                              main
+     000042A3  _cpct_setPalette                   cpct_video
+     000042BA  _cpct_isKeyPressed                 cpct_keyboard
+     000042BA  cpct_isKeyPressed_asm              cpct_keyboard
+     000042C6  _cpct_setPALColour                 cpct_video
+     000042D2  _cpct_drawSprite                   cpct_sprites
+     00004377  _cpct_keyboardStatusBuffer         cpct_keyboard
+     00004381  _cpct_setVideoMode                 cpct_video
+     0000438F  _cpct_isAnyKeyPressed_f            cpct_keyboard
+     0000438F  cpct_isAnyKeyPressed_f_asm         cpct_keyboard
+     000043AA  _cpct_memset                       cpct_memutils
+     000043B8  _cpct_disableFirmware              cpct_firmware
+     000043B8  _cpct_removeInterruptHandler       cpct_firmware
+     000043B8  cpct_disableFirmware_asm           cpct_firmware
+     000043B8  cpct_removeInterruptHandler_asm    cpct_firmware
+     000043C8  _cpct_mode_rom_status              cpct_firmware
+     000043C9  _cpct_getScreenPtr                 cpct_video
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               000043F2    00000005 =           5. bytes (REL,CON)
+_DATA                               000043E9    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000043F2  _prota                             main
+     000043E9  _prota                             main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
 

@@ -19,9 +19,9 @@ Symbol Table
   0 _dibujarProta                                                  0000 GR
     _g_PJ_0                                                        **** GX
     _g_palette                                                     **** GX
-  0 _init                                                          0040 GR
-  0 _main                                                          008E GR
-  0 _mover_personaje                                               0028 GR
+  0 _init                                                          0037 GR
+  0 _main                                                          0085 GR
+  0 _mover_personaje                                               001F GR
   1 _prota                                                         0000 GR
 
 
@@ -30,7 +30,7 @@ Hexadecimal [16-Bits]
 
 Area Table
 
-   0 _CODE                                      size   9C   flags    0
+   0 _CODE                                      size   93   flags    0
    1 _DATA                                      size    5   flags    0
    2 _INITIALIZED                               size    0   flags    0
    3 _DABS                                      size    0   flags    8

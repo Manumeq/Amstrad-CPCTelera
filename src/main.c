@@ -27,7 +27,7 @@ TProta  prota;
 void dibujarProta(){
     u8* pvmem=cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
     //cpct_drawSpriteMaskedAlignedTable(prota.sprite,pvmem,prota.x,prota.y);
-    cpct_drawSprite(prota.sprite,pvmem,prota.x,prota.y);
+    cpct_drawSprite(prota.sprite,pvmem,G_PJ_0_W,G_PJ_0_H);
 }
 void mover_personaje(){
     if(cpct_isKeyPressed(Key_CursorRight)){
@@ -57,7 +57,7 @@ void init(){
     prota.x=20;
     prota.y=15;
     prota.sprite=g_PJ_0;
-    cpct_drawSprite(prota.sprite,pvmem,64,32);
+    cpct_drawSprite(prota.sprite,pvmem,16,32);
 
 }
 

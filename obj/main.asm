@@ -61,7 +61,7 @@ _prota::
 ; ---------------------------------
 _dibujarProta::
 ;src/main.c:28: u8* pvmem=cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
-	ld	hl, #(_prota + 0x0001) + 0
+	ld	hl, #_prota + 1
 	ld	d, (hl)
 	ld	hl, #_prota + 0
 	ld	e, (hl)
@@ -71,17 +71,12 @@ _dibujarProta::
 	call	_cpct_getScreenPtr
 	ld	c, l
 	ld	b, h
-;src/main.c:30: cpct_drawSprite(prota.sprite,pvmem,prota.x,prota.y);
-	ld	hl, #(_prota + 0x0001) + 0
-	ld	d, (hl)
-	ld	hl, #_prota + 0
-	ld	e, (hl)
+;src/main.c:30: cpct_drawSprite(prota.sprite,pvmem,G_PJ_0_W,G_PJ_0_H);
 	ld	hl, (#_prota + 2)
-	push	hl
-	pop	iy
+	ld	de, #0x2010
 	push	de
 	push	bc
-	push	iy
+	push	hl
 	call	_cpct_drawSprite
 	ret
 ;src/main.c:32: void mover_personaje(){
@@ -149,8 +144,8 @@ _init::
 ;src/main.c:59: prota.sprite=g_PJ_0;
 	ld	bc, #_g_PJ_0+0
 	ld	((_prota + 0x0002)), bc
-;src/main.c:60: cpct_drawSprite(prota.sprite,pvmem,64,32);
-	ld	hl, #0x2040
+;src/main.c:60: cpct_drawSprite(prota.sprite,pvmem,16,32);
+	ld	hl, #0x2010
 	push	hl
 	push	de
 	push	bc
