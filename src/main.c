@@ -17,10 +17,31 @@
 //------------------------------------------------------------------------------
 
 #include <cpctelera.h>
-#include "credits.h"
+#include "PJ_0.h"
+typedef struct{
+    u8 x,y;
+    u8* sprite;
+    u8 mover;
+}TProta;
+TProta  prota;
+void dibujarProta(){
+    u8* pvmem=cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
+    //cpct_drawSpriteMaskedAlignedTable(prota.sprite,pvmem,prota.x,prota.y);
+    cpct_drawSprite(prota.sprite,pvmem,prota.x,prota.y);
+}
+void mover_personaje(){
+    if(cpct_isKeyPressed(Key_CursorRight)){
+
+    }else if(cpct_isKeyPressed(Key_CursorLeft)){
+
+    }else if(cpct_isKeyPressed(Key_CursorUp)){
+
+    }else{
+
+    }
+}
 void init(){
     u8* pvmem;  // Pointer to video memory
-    u8* sprite;
     cpct_disableFirmware();
     // Clear Screen
     cpct_memset(CPCT_VMEM_START, 0, 0x4000);
@@ -32,8 +53,11 @@ void init(){
     // Draw String on the middle of the screen
     pvmem = cpct_getScreenPtr(CPCT_VMEM_START, 20, 96);
     //cpct_drawStringM0("Welcome to CPCtelera!", pvmem, 1, 0);
-    cpct_drawSolidBox(CPCT_VMEM_START, 0, 10, 10);
-    cpct_drawSprite(sprite,pvmem,16,16);
+    
+    prota.x=20;
+    prota.y=15;
+    prota.sprite=g_PJ_0;
+    cpct_drawSprite(prota.sprite,pvmem,64,32);
 
 }
 
@@ -41,5 +65,9 @@ void main(void) {
     init();
 
     // Loop forever
-    while (1);
+    while (1){
+        if(cpct_isAnyKeyPressed_f){//con f mas rapido pero mas memoria
+            mover_personaje();
+        }
+    }
 }

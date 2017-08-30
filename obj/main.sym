@@ -8,24 +8,30 @@ Symbol Table
     .__.CPU.                                                    =  0000 L
     .__.H$L.                                                    =  0000 L
     _cpct_disableFirmware                                          **** GX
-    _cpct_drawSolidBox                                             **** GX
     _cpct_drawSprite                                               **** GX
     _cpct_getScreenPtr                                             **** GX
+    _cpct_isAnyKeyPressed_f                                        **** GX
+    _cpct_isKeyPressed                                             **** GX
     _cpct_memset                                                   **** GX
     _cpct_setPALColour                                             **** GX
     _cpct_setPalette                                               **** GX
     _cpct_setVideoMode                                             **** GX
+  0 _dibujarProta                                                  0000 GR
+    _g_PJ_0                                                        **** GX
     _g_palette                                                     **** GX
-  0 _init                                                          0000 GR
-  0 _main                                                          0053 GR
+  0 _init                                                          0040 GR
+  0 _main                                                          008E GR
+  0 _mover_personaje                                               0028 GR
+  1 _prota                                                         0000 GR
+
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
 Hexadecimal [16-Bits]
 
 Area Table
 
-   0 _CODE                                      size   58   flags    0
-   1 _DATA                                      size    0   flags    0
+   0 _CODE                                      size   9C   flags    0
+   1 _DATA                                      size    5   flags    0
    2 _INITIALIZED                               size    0   flags    0
    3 _DABS                                      size    0   flags    8
    4 _HOME                                      size    0   flags    0
