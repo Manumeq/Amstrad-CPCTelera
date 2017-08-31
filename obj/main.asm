@@ -11,14 +11,16 @@
 	.globl _main
 	.globl _init
 	.globl _mover_personaje
-	.globl _dibujarProta
+	.globl _dibujar_personaje
 	.globl _cpct_getScreenPtr
 	.globl _cpct_setPALColour
 	.globl _cpct_setPalette
+	.globl _cpct_waitVSYNC
 	.globl _cpct_setVideoMode
 	.globl _cpct_drawSprite
 	.globl _cpct_isAnyKeyPressed_f
 	.globl _cpct_isKeyPressed
+	.globl _cpct_scanKeyboard_if
 	.globl _cpct_memset
 	.globl _cpct_disableFirmware
 	.globl _prota
@@ -55,12 +57,12 @@ _prota::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;src/main.c:27: void dibujarProta(){
+;src/main.c:27: void dibujar_personaje(){
 ;	---------------------------------
-; Function dibujarProta
+; Function dibujar_personaje
 ; ---------------------------------
-_dibujarProta::
-;src/main.c:28: u8* pvmem=cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
+_dibujar_personaje::
+;src/main.c:29: pvmem = cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
 	ld	hl, #_prota + 1
 	ld	d, (hl)
 	ld	hl, #_prota + 0
@@ -73,7 +75,7 @@ _dibujarProta::
 	ld	b, h
 ;src/main.c:30: cpct_drawSprite(prota.sprite,pvmem,G_PJ_0_W,G_PJ_0_H);
 	ld	hl, (#_prota + 2)
-	ld	de, #0x2010
+	ld	de, #0x1b09
 	push	de
 	push	bc
 	push	hl
@@ -89,24 +91,32 @@ _mover_personaje::
 	call	_cpct_isKeyPressed
 	ld	a, l
 	or	a, a
-	ret	NZ
-;src/main.c:35: }else if(cpct_isKeyPressed(Key_CursorLeft)){
+	jr	Z,00107$
+;src/main.c:34: prota.x++;
+	ld	bc, #_prota+0
+	ld	a, (bc)
+	inc	a
+	ld	(bc), a
+;src/main.c:35: dibujar_personaje();
+	jp  _dibujar_personaje
+00107$:
+;src/main.c:36: }else if(cpct_isKeyPressed(Key_CursorLeft)){
 	ld	hl, #0x0101
 	call	_cpct_isKeyPressed
 	ld	a, l
 	or	a, a
 	ret	NZ
-;src/main.c:37: }else if(cpct_isKeyPressed(Key_CursorUp)){
+;src/main.c:38: }else if(cpct_isKeyPressed(Key_CursorUp)){
 	ld	hl, #0x0100
 	jp  _cpct_isKeyPressed
-;src/main.c:43: void init(){
+;src/main.c:45: void init(){
 ;	---------------------------------
 ; Function init
 ; ---------------------------------
 _init::
-;src/main.c:45: cpct_disableFirmware();
+;src/main.c:47: cpct_disableFirmware();
 	call	_cpct_disableFirmware
-;src/main.c:47: cpct_memset(CPCT_VMEM_START, 0, 0x4000);
+;src/main.c:49: cpct_memset(CPCT_VMEM_START, 0, 0x4000);
 	ld	hl, #0x4000
 	push	hl
 	xor	a, a
@@ -115,57 +125,60 @@ _init::
 	ld	h, #0xc0
 	push	hl
 	call	_cpct_memset
-;src/main.c:48: cpct_setVideoMode(0);
+;src/main.c:50: cpct_setVideoMode(0);
 	ld	l, #0x00
 	call	_cpct_setVideoMode
-;src/main.c:49: cpct_setBorder(HW_BLACK);
+;src/main.c:51: cpct_setBorder(HW_BLACK);
 	ld	hl, #0x1410
 	push	hl
 	call	_cpct_setPALColour
-;src/main.c:51: cpct_setPalette(g_palette, 16);
+;src/main.c:53: cpct_setPalette(g_palette, 16);
 	ld	hl, #0x0010
 	push	hl
 	ld	hl, #_g_palette
 	push	hl
 	call	_cpct_setPalette
-;src/main.c:54: pvmem = cpct_getScreenPtr(CPCT_VMEM_START, 20, 96);
-	ld	hl, #0x6014
-	push	hl
+;src/main.c:56: pvmem = cpct_getScreenPtr(CPCT_VMEM_START,prota.x,prota.y);
+	ld	hl, #(_prota + 0x0001) + 0
+	ld	d, (hl)
+	ld	hl, #_prota + 0
+	ld	e, (hl)
+	push	de
 	ld	hl, #0xc000
 	push	hl
 	call	_cpct_getScreenPtr
-	ex	de,hl
-;src/main.c:57: prota.x=20;
+;src/main.c:59: prota.x=20;
 	ld	hl, #_prota
 	ld	(hl), #0x14
-;src/main.c:58: prota.y=15;
+;src/main.c:60: prota.y=15;
 	ld	hl, #(_prota + 0x0001)
 	ld	(hl), #0x0f
-;src/main.c:59: prota.sprite=g_PJ_0;
-	ld	bc, #_g_PJ_0+0
-	ld	((_prota + 0x0002)), bc
-;src/main.c:60: cpct_drawSprite(prota.sprite,pvmem,16,32);
-	ld	hl, #0x2010
-	push	hl
-	push	de
-	push	bc
-	call	_cpct_drawSprite
+;src/main.c:61: prota.sprite=g_PJ_0;
+	ld	hl, #_g_PJ_0
+	ld	((_prota + 0x0002)), hl
 	ret
-;src/main.c:64: void main(void) {
+;src/main.c:66: void main(void) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;src/main.c:65: init();
+;src/main.c:67: init();
 	call	_init
-;src/main.c:68: while (1){
+;src/main.c:70: while (1){
 00104$:
-;src/main.c:69: if(cpct_isAnyKeyPressed_f){//con f mas rapido pero mas memoria
+;src/main.c:71: cpct_scanKeyboard_if();
+	call	_cpct_scanKeyboard_if
+;src/main.c:72: if(cpct_isAnyKeyPressed_f){//con f mas rapido pero mas memoria
 	ld	a, #>(_cpct_isAnyKeyPressed_f)
 	or	a,#<(_cpct_isAnyKeyPressed_f)
-	jr	Z,00104$
-;src/main.c:70: mover_personaje();
+	jr	Z,00102$
+;src/main.c:73: mover_personaje();
 	call	_mover_personaje
+;src/main.c:74: dibujar_personaje();
+	call	_dibujar_personaje
+00102$:
+;src/main.c:76: cpct_waitVSYNC();
+	call	_cpct_waitVSYNC
 	jr	00104$
 	.area _CODE
 	.area _INITIALIZER

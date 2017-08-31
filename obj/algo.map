@@ -18,89 +18,103 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__CABS                         
      00000000  s__DABS                         
      00000005  l__DATA                         
-     000003E9  l__CODE                         
+     000009B6  l__CODE                         
      00004000  s__CODE                         
-     000043E9  s__DATA                         
-     000043EE  s__GSFINAL                      
-     000043EE  s__GSINIT                       
-     000043EE  s__HOME                         
-     000043EE  s__INITIALIZED                  
-     000043EE  s__INITIALIZER                  
+     000049B6  s__DATA                         
+     000049BB  s__GSFINAL                      
+     000049BB  s__GSINIT                       
+     000049BB  s__HOME                         
+     000049BB  s__INITIALIZED                  
+     000049BB  s__INITIALIZER                  
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00004000    000003E9 =        1001. bytes (REL,CON)
+_CODE                               00004000    000009B6 =        2486. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00004000  _g_palette                         PJ_0
-     00004010  _g_PJ_0                            PJ_0
-     00004210  _dibujarProta                      main
-     0000422F  _mover_personaje                   main
-     00004247  _init                              main
-     00004295  _main                              main
-     000042A3  _cpct_setPalette                   cpct_video
-     000042BA  _cpct_isKeyPressed                 cpct_keyboard
-     000042BA  cpct_isKeyPressed_asm              cpct_keyboard
-     000042C6  _cpct_setPALColour                 cpct_video
-     000042D2  _cpct_drawSprite                   cpct_sprites
-     00004377  _cpct_keyboardStatusBuffer         cpct_keyboard
-     00004381  _cpct_setVideoMode                 cpct_video
-     0000438F  _cpct_isAnyKeyPressed_f            cpct_keyboard
-     0000438F  cpct_isAnyKeyPressed_f_asm         cpct_keyboard
-     000043AA  _cpct_memset                       cpct_memutils
-     000043B8  _cpct_disableFirmware              cpct_firmware
-     000043B8  _cpct_removeInterruptHandler       cpct_firmware
-     000043B8  cpct_disableFirmware_asm           cpct_firmware
-     000043B8  cpct_removeInterruptHandler_asm    cpct_firmware
-     000043C8  _cpct_mode_rom_status              cpct_firmware
-     000043C9  _cpct_getScreenPtr                 cpct_video
-
+     00004000  _g_palette                         PJ
+     00004010  _g_PJ_0                            PJ
+     00004103  _g_PJ_1                            PJ
+     000041F6  _g_PJ_2                            PJ
+     000042E9  _g_PJ_3                            PJ
+     000043DC  _g_PJ_4                            PJ
+     000044BD  _g_PJ_5                            PJ
+     0000459E  _g_PJ_6                            PJ
+     0000467F  _g_PJ_7                            PJ
+     00004760  _dibujar_personaje                 main
+     0000477F  _mover_personaje                   main
+     000047A1  _init                              main
+     000047E9  _main                              main
+     00004800  _cpct_setPalette                   cpct_video
+     00004817  _cpct_isKeyPressed                 cpct_keyboard
+     00004817  cpct_isKeyPressed_asm              cpct_keyboard
+     00004823  _cpct_setPALColour                 cpct_video
+     0000482F  _cpct_drawSprite                   cpct_sprites
+     000048D4  _cpct_keyboardStatusBuffer         cpct_keyboard
+     000048DE  _cpct_scanKeyboard_if              cpct_keyboard
+     000048DE  cpct_scanKeyboard_if_asm           cpct_keyboard
+     00004946  _cpct_waitVSYNC                    cpct_video
+     00004946  cpct_waitVSYNC_asm                 cpct_video
+     0000494E  _cpct_setVideoMode                 cpct_video
+     0000495C  _cpct_isAnyKeyPressed_f            cpct_keyboard
+     0000495C  cpct_isAnyKeyPressed_f_asm         cpct_keyboard
+     00004977  _cpct_memset                       cpct_memutils
+     00004985  _cpct_disableFirmware              cpct_firmware
+     00004985  _cpct_removeInterruptHandler       cpct_firmware
+     00004985  cpct_disableFirmware_asm           cpct_firmware
+     00004985  cpct_removeInterruptHandler_asm    cpct_firmware
+     00004995  _cpct_mode_rom_status              cpct_firmware
+     00004996  _cpct_getScreenPtr                 cpct_video
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               000043E9    00000005 =           5. bytes (REL,CON)
+_DATA                               000049B6    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000043E9  _prota                             main
+     000049B6  _prota                             main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
 
 Files Linked                              [ module(s) ]
 
-obj/PJ_0.rel                              [ PJ_0 ]
+obj/PJ.rel                                [ PJ ]
 obj/main.rel                              [ main ]
 
 
 Libraries Linked                          [ object file ]
 
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_setPalette_cbindings.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_isKeyPressed.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_setPALColour_cbindings.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_drawSprite_cbindings.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ keyboard.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_scanKeyboard_if.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
+                                          [ cpct_waitVSYNC.rel ]
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_setVideoMode_cbindings.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_isAnyKeyPressed_f.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_memset_cbinding.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_removeInterruptHandler.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpc_mode_rom_status.rel ]
-/cygdrive/d/Programas/Cygwin2/home/Manu/cpctelera-1.4.2/cpctelera/cpctelera.lib
+/home/Yo/cpctelera-1.4.2/cpctelera/cpctelera.lib
                                           [ cpct_getScreenPtr_cbindings.rel ]
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 5.

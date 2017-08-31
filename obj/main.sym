@@ -13,14 +13,16 @@ Symbol Table
     _cpct_isAnyKeyPressed_f                                        **** GX
     _cpct_isKeyPressed                                             **** GX
     _cpct_memset                                                   **** GX
+    _cpct_scanKeyboard_if                                          **** GX
     _cpct_setPALColour                                             **** GX
     _cpct_setPalette                                               **** GX
     _cpct_setVideoMode                                             **** GX
-  0 _dibujarProta                                                  0000 GR
+    _cpct_waitVSYNC                                                **** GX
+  0 _dibujar_personaje                                             0000 GR
     _g_PJ_0                                                        **** GX
     _g_palette                                                     **** GX
-  0 _init                                                          0037 GR
-  0 _main                                                          0085 GR
+  0 _init                                                          0041 GR
+  0 _main                                                          0089 GR
   0 _mover_personaje                                               001F GR
   1 _prota                                                         0000 GR
 
@@ -30,7 +32,7 @@ Hexadecimal [16-Bits]
 
 Area Table
 
-   0 _CODE                                      size   93   flags    0
+   0 _CODE                                      size   A0   flags    0
    1 _DATA                                      size    5   flags    0
    2 _INITIALIZED                               size    0   flags    0
    3 _DABS                                      size    0   flags    8
